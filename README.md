@@ -37,10 +37,11 @@ for i in range(1,num+1):
     if i>0:
         dic[i]=i*i
 print(dic)
-
 ```
 
+
 ## Day2
+
 > 4.Write a program which accepts a sequence of comma-separated numbers from console and generate a list and a tuple which contains every number.Suppose the following input is supplied to the program:
 
 ```python
@@ -135,4 +136,135 @@ while True:
 
 for i in lines:
     print(i.upper())
+```
+
+## Day3
+
+> 10.Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
+
+> Suppose the following input is supplied to the program:
+
+```
+hello world and practice makes perfect and hello world again
+```
+
+> Then, the output should be:
+
+```
+again and hello makes perfect practice world
+```
+
+```python
+words = input("请输入 words:")
+words_new = words.split(" ")
+words_result = list()
+for i in words_new:
+    if i not in words_result:
+        words_result.append(i)
+words_result.sort()
+str = " ".join(words_result)
+print(str)    
+```
+
+>11.Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
+>Example:
+```
+0100,0011,1010,1001
+```
+>Then the output should be:
+```
+1010
+```
+
+```python
+nums = input("请输入二进制数字：").split(",")
+lis = list()
+for item in nums:
+    item_new = int(item,2)
+    if item_new % 5 == 0:
+        print(item)
+```
+
+> 12.Write a program, which will find all such numbers between 1000 and 3000 (both included) such that each digit of the number is an even number.The numbers obtained should be printed in a comma-separated sequence on a single line.
+
+```python
+lis = list()
+for i in range(1000,3031):
+    if i % 2 == 0:
+        lis.append(str(i))
+str = " ".join(lis)
+print(str)
+```
+
+> 13.Write a program that accepts a sentence and calculate the number of letters and digits.
+
+> Suppose the following input is supplied to the program:
+```
+hello world! 123
+```
+> Then, the output should be:
+```
+LETTERS 10
+DIGITS 3
+```
+
+```python
+import re
+words = input("请输入 words:")
+letters_result = ' '.join(re.findall(r'[A-Za-z]', words)).split()
+list(letters_result)
+digit_result = ' '.join(re.findall(r'[0-9]+', words)).split()
+list(digit_result)
+print("LETTERS ",len(letters_result))
+print("DIGITS ",len(digit_result))
+```
+
+> 14.Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+
+> Suppose the following input is supplied to the program:
+```
+Hello world!
+```
+> Then, the output should be:
+```
+UPPER CASE 1
+LOWER CASE 9
+```
+```python
+import re
+word = input("请输入 words:")
+result = ' '.join(re.findall(r'[A-Za-z]', word)).split()
+list(result)
+i = 0 
+j = 0
+for item in result:
+    if item.islower() is True:
+        i = i + 1
+    else:
+        j = j + 1
+print("UPPER CASE ",j)
+print("LOWER CASE ",i)
+
+#使用了 re 模块的 findall 函数找到字母。
+```
+
+> 14.Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.
+> Suppose the following input is supplied to the program:
+```
+9
+```
+> Then, the output should be:
+```
+11106
+```
+```python
+def Plu(num):
+    num = str(input("请输入数字："))
+    x1 = num * 1
+    x2 = num * 2
+    x3 = num * 3
+    x4 = num * 4 
+    Num = int(x1) + int(x2) + int(x3) + int(x4)
+    print(Num)
+Plu(9)
 ```
