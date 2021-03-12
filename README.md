@@ -218,6 +218,7 @@ list(digit_result)
 print("LETTERS ",len(letters_result))
 print("DIGITS ",len(digit_result))
 ```
+## Day4
 
 > 14.Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
 
@@ -267,4 +268,93 @@ def Plu(num):
     Num = int(x1) + int(x2) + int(x3) + int(x4)
     print(Num)
 Plu(9)
+```
+## Day5
+
+> 16.Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers. >Suppose the following input is supplied to the program:
+```
+1,2,3,4,5,6,7,8,9
+```
+
+> Then, the output should be:
+
+```
+1,9,25,49,81
+```
+```python
+nums = input("请输入 nums：").split(",")
+nums = list(map(int,nums))
+lis = list()
+for item in nums:
+    if item % 2 != 0:
+        lis.append(item**2)
+print(lis)
+
+#运用 map 函数把 list 中国的字符串转换为 int
+```
+> 17.Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
+```
+D 100
+W 200
+```
+> D means deposit while W means withdrawal.
+Suppose the following input is supplied to the program:
+```
+D 300
+D 300
+W 200
+D 100
+```
+> Then, the output should be:
+```
+500
+```
+```python
+import re
+lines = list()
+while True:
+    try:
+        lines.append(input())
+    except:
+        break
+#实现多行输入
+lis_1 = list()
+lis_2 = list()
+for i in lines:
+    if "D" in i:
+        nums = re.findall('[0-9]',i)
+        num = int("".join(nums))
+        lis_1.append(num)
+    else:
+        nums = re.findall('[0-9]',i)
+        num = int("".join(nums))
+        lis_2.append(num)
+print(sum(lis_1)-sum(lis_2))
+```
+
+## Day6
+
+> 18.A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
+
+> Following are the criteria for checking the password:
+```
+At least 1 letter between [a-z]
+At least 1 number between [0-9]
+At least 1 letter between [A-Z]
+At least 1 character from [$#@]
+Minimum length of transaction password: 6
+Maximum length of transaction password: 12
+```
+> Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.
+
+> Example
+
+> If the following passwords are given as input to the program:
+```
+ABd1234@1,a F1#,2w3E*,2We3345
+```
+
+> Then, the output of the program should be:
+```
+ABd1234@1
 ```
