@@ -358,3 +358,200 @@ ABd1234@1,a F1#,2w3E*,2We3345
 ```
 ABd1234@1
 ```
+```python
+import re
+passwords = input("请输入密码：").split(",")
+for item in passwords:
+    i = 0
+    j = 0
+    l = 0
+    m = 0
+    for word in item:
+        if re.match(r"\d",word):
+            i = i + 1
+            #数字计数
+        elif re.match("[a-z]",word):
+            j = j + 1
+        elif re.match("[A-Z]",word):
+            l = l + 1
+        elif re.match("[$#@]",word):
+            m = m + 1
+                
+    
+    if i >=1 and j >=1 and l >= 1 and m >=1 and len(item) in range(6,13):
+        print(item)
+```
+
+> 19.You are required to write a program to sort the (name, age, score) tuples by ascending order where name is string, age and score are numbers. The tuples are input by console. The sort criteria is:
+* 1: Sort based on name
+* 2: Then sort based on age
+* 3: Then sort by score
+> The priority is that name > age > score.
+> If the following tuples are given as input to the program:
+```
+Tom,19,80
+John,20,90
+Jony,17,91
+Jony,17,93
+Json,21,85
+```
+> Then, the output of the program should be:
+```
+[('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
+```
+```python
+lines = list()
+lis = list()
+while True:
+    try:
+        lines.append(input())
+    except:
+        break
+#多行输入
+for i in range(0,len(lines)):
+    lis.append(tuple(lines[i].split(",")))
+print(sorted(lis))
+```
+> 20.Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
+> Suppose the following input is supplied to the program:
+```
+7
+```
+> Then, the output should be:
+```
+0
+7
+14
+```
+```python
+class test():
+    def test(self):
+        x = int(input("请输入数字:"))
+        for i in range(0,20):
+            if i%x == 0:
+                print(i)
+Test = test()
+#把类实例化
+Test.test()
+```
+> 21.A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
+```
+UP 5
+DOWN 3
+LEFT 3
+RIGHT 2
+```
+> The numbers after the direction are steps. Please write a program to compute the distance from current position after a sequence of movement and original point. If the distance is a float, then just print the nearest integer. Example: If the following tuples are given as input to the program:
+```
+UP 5
+DOWN 3
+LEFT 3
+RIGHT 2
+```
+> Then, the output of the program should be:
+```
+2
+```
+```python
+import re
+import numpy
+def test():
+#定义开方函数
+    lines = list()
+    while True:
+        try:
+            lines.append(input())
+        except:
+            break
+#多行输入
+    for item in lines:
+        if "UP" in item:
+            x = re.findall(r"\d",item)
+        elif "DOWN" in item:
+            y = re.findall(r"\d",item)
+        elif "LEFT" in item:
+            l = re.findall(r"\d",item)
+        else:
+            m = re.findall(r"\d",item)
+    a = int(x[0])-int(y[0])
+    b = int(l[0])-int(m[0])
+    c = a**2 + b**2
+#获得最后的值
+    print(int(numpy.sqrt(c)))
+
+test()
+```
+> Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically.
+> Suppose the following input is supplied to the program:
+```
+New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
+```
+> Then, the output should be:
+```
+2:2
+3.:1
+3?:1
+New:1
+Python:5
+Read:1
+and:1
+between:1
+choosing:1
+or:2
+to:1
+```
+```python
+import re
+word = input("请输入字符串：")
+words = re.split(r" ",word)
+#re.split 可以按照空格划分，而 str.split 直接全部切割
+lis = list()
+for item in words:
+    if item not in lis:
+        lis.append(item)
+for item in sorted(lis):
+    print(item,":",word.count(item))
+```
+
+> 23.Write a method which can calculate square value of number
+
+```python
+def test():
+    num = int(input("请输入数字："))
+    print(num**2)
+test()
+```
+> 24.Python has many built-in functions, and if you do not know how to use it, you can read document online or find some books. But Python has a built-in document function for every built-in functions.
+
+> Please write a program to print some Python built-in functions documents, such as abs(), int(), raw_input()
+
+> And add document for your own function
+
+```python
+print(int.__doc__)
+def test(num):
+    '''
+    export half of the number
+    '''
+    return(num/2)
+
+test(2)
+print(test.__doc__)
+```
+
+> 25.Define a class, which have a class parameter and have a same instance parameter.
+
+```python
+class Fruits:
+    name = "Fruits"
+    def __init__(self,name = None):
+        self.name = name
+    
+orange = Fruits("Orange")
+print("orange name is",orange.name)
+
+grape = Fruits()
+grape.name = "Grape"
+print("grape name is",grape.name)
+#这一题做的不明不白的。
+```
