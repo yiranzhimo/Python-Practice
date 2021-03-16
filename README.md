@@ -555,3 +555,46 @@ grape.name = "Grape"
 print("grape name is",grape.name)
 #这一题做的不明不白的。
 ```
+> 26.Define a function which can compute the sum of two numbers.
+```python
+def Add(a,b):
+    return(a+b)
+
+print(Add(2,3))
+```
+
+> 27.Define a function that can convert a integer into a string and print it in console.
+
+```python
+def tra(i):
+    return(str(i))
+
+print(tra(3))
+```
+
+> 28.Define a function that can receive two integer numbers in string form and compute their sum and then print it in console.
+```python
+def add(a,b):
+    return(int(a)+int(b))
+print(add("2","3"))
+```
+
+> 29.Define a function that can accept two strings as input and concatenate them and then print it in console.
+```python
+def link(a,b):
+    return(a+b)
+
+print(link("hh","biubiu"))
+```
+
+> 30.Define a function that can accept two strings as input and print the string with maximum length in console. If two strings have the same length, then the function should print all strings line by line.
+```python
+def mor(a,b):
+    if len(a) > len(b):
+        print(a)
+    elif len(a) < len(b):
+        print(b)
+    else:
+        print(a,b)
+mor("hh","biubiu")
+```
