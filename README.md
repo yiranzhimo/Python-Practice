@@ -598,3 +598,215 @@ def mor(a,b):
         print(a,b)
 mor("hh","biubiu")
 ```
+
+> 31.Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
+```python
+def test():
+    dic = dict() 
+    for i in range(1,21):
+        dic[i]=i*i
+    return dic
+print(test())
+#此时不需要定义参数
+```
+> 32.Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the keys only.
+```python
+def test():
+    dic = dict() 
+    for i in range(1,21):
+        dic[i]=i*i
+    return dic.keys()
+print(test())
+#此时不需要定义参数
+```
+> 33.Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
+```python
+def test():
+    lis = list() 
+    for i in range(1,21):
+        lis.append(i*i)
+    return lis
+print(test())
+#此时不需要定义参数
+```
+> 34.Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the first 5 elements in the list.
+```python
+def test():
+    lis = list() 
+    for i in range(1,21):
+        lis.append(i*i)
+    return lis[0:5]
+print(test())
+#此时不需要定义参数
+```
+
+> 35.Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the last 5 elements in the list.
+```python
+def test():
+    lis = list() 
+    for i in range(1,21):
+        lis.append(i*i)
+    return lis[-5:]
+print(test())
+#此时不需要定义参数
+```
+> 36.Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print all values except the first 5 elements in the list.
+```python
+def test():
+    lis = list() 
+    for i in range(1,21):
+        lis.append(i*i)
+    return lis[5:]
+print(test())
+#此时不需要定义参数
+```
+
+> 37.Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included).
+```python
+def test():
+    lis = list() 
+    for i in range(1,21):
+        lis.append(i*i)
+    return tuple(lis)
+print(test())
+```
+
+> 38.With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line.
+```python
+tuple = (1,2,3,4,5,6,7,8,9,10)
+tuple_1 = tuple[0:5]
+tuple_2 = tuple[5:10]
+print(tuple_1)
+print(tuple_2)
+```
+
+> 39.Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10).
+```python
+tuple_1 = (1,2,3,4,5,6,7,8,9,10)
+lis = list()
+for i in tuple_1:
+    if i%2 ==0:
+        lis.append(i)
+print(tuple(lis))
+```
+
+> 40.Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No".
+```python
+X = input("请输入字符串：")
+if X.lower() == "yes":
+    print("Yes")
+else:
+    print("No")
+```
+> 41.Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10].
+```python
+def squ(i):
+    return i*i
+
+lis_1 = [1,2,3,4,5,6,7,8,9,10]
+print(list(map(squ, lis_1)))
+```
+
+> 42.Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
+```python
+def even(i):
+    return i%2 ==0
+
+def squ(i):
+    return i*i
+
+lis = [1,2,3,4,5,6,7,8,9,10]
+print(list(map(squ,filter(even,lis) )))
+#filter(function, iterable)，function -- 判断函数，iterable -- 可迭代对象。
+```
+
+> 43.Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+```python
+def even(i):
+    return i%2 == 0
+lis = list()
+for i in range(1,21):
+    lis.append(i)
+print(list(filter(even,lis)))
+```
+
+> 44.Write a program which can map() to make a list whose elements are square of numbers between 1 and 20 (both included).
+```python
+def squ(i):
+    return i*i
+
+lis = list()
+for i in range(1,21):
+    lis.append(i)
+print(list(map(squ, lis)))
+```
+> 45.Define a class named American which has a static method called printNationality.
+```python
+class American():
+    def printNationality(self):
+        print("Are you American?")
+
+test = American()
+test.printNationality()
+```
+> 46.Define a class named American and its subclass NewYorker.
+```python
+class American():
+    pass
+
+class NewYorker(American):
+    pass
+
+american = American()
+newyorker = NewYorker()
+
+print(american)
+print(newyorker)
+```
+> 47.Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area.
+```python
+class Circle():
+    def __init__(self,r):
+        self.radius = r
+    def area(self):
+        return(3.14*self.radius*self.radius)
+circle = Circle(2)
+print(circle.area())
+#慢慢了解 self,__init__ 的概念。
+```
+> 48.Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area.
+```python
+class Circle():
+    def __init__(self,length,width):
+        self.length = length
+        self.width = width
+    def area(self):
+        return(self.length*self.width)
+circle = Circle(3,4)
+print(circle.area())
+```
+
+> 49.Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+```python
+class Shape:
+    def __init__(self):
+        pass
+    
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self,length = 0):
+        Shape.__init__(self)
+        self.length = length
+    def area(self):
+        return self.length*self.length
+
+square = Square(5)
+print(square.area())
+print(Square().area())
+```
+> 50.Please raise a RuntimeError exception.
+```python
+raise RuntimeError('something wrong')
+```
