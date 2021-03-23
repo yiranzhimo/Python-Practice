@@ -919,3 +919,246 @@ and f(0)=0
 ```
 500
 ```
+```python
+n = int(input("请输入数字："))
+i = 0
+j = 0
+while i < n:
+    i = i + 1
+    j = j + 100
+print(j)
+```
+> 61.The Fibonacci Sequence is computed based on the following formula:
+```
+f(n)=0 if n=0
+f(n)=1 if n=1
+f(n)=f(n-1)+f(n-2) if n>1
+```
+> Please write a program to compute the value of f(n) with a given n input by console.
+
+> Example: If the following n is given as input to the program:
+```
+7
+```
+> Then, the output of the program should be:
+```
+13
+```
+> In case of input data being supplied to the question, it should be assumed to be a console input.
+```python
+n = int(input("请输入数字："))
+lis = list()
+j = 0
+if n == 0:
+    print(j)
+if n == 1:
+    j = j + 1
+    print(j)
+i = 1
+if n > 1:
+    lis.append(0)
+    lis.append(1)
+    while i < n:
+        i = i + 1
+        j = lis[i-1]+lis[i-2]
+        lis.append(j)
+    print(lis[i])
+```
+> 62.The Fibonacci Sequence is computed based on the following formula:
+```
+f(n)=0 if n=0
+f(n)=1 if n=1
+f(n)=f(n-1)+f(n-2) if n>1
+```
+> Please write a program to compute the value of f(n) with a given n input by console.
+> Example: If the following n is given as input to the program:
+```
+7
+```
+> Then, the output of the program should be:
+```
+0,1,1,2,3,5,8,13
+```
+> In case of input data being supplied to the question, it should be assumed to be a console input.
+```python
+n = int(input("请输入数字："))
+lis = list()
+j = 0
+if n == 0:
+    print(j)
+if n == 1:
+    j = j + 1
+    print(j)
+i = 1
+if n > 1:
+    lis.append(0)
+    lis.append(1)
+    while i < n:
+        i = i + 1
+        j = lis[i-1]+lis[i-2]
+        lis.append(j)
+    print(lis)
+```
+> 63.Please write a program using generator to print the even numbers between 0 and n in comma separated form while n is input by console.
+> Example: If the following n is given as input to the program:
+```
+10
+```
+> Then, the output of the program should be:
+```
+0,2,4,6,8,10
+```
+> In case of input data being supplied to the question, it should be assumed to be a console input.
+```python
+n = int(input("请输入数字："))
+lis = list()
+for i in range(0,n+1):
+    if i % 2 == 0:
+        lis.append(str(i))
+print(",".join(lis))
+```
+> Please write a program using generator to print the numbers which can be divisible by 5 and 7 between 0 and n in comma separated form while n is input by console.
+
+> Example: If the following n is given as input to the program:
+```
+100
+```
+> Then, the output of the program should be:
+```
+0,35,70
+```
+> In case of input data being supplied to the question, it should be assumed to be a console input.
+```python
+n = int(input("请输入数字："))
+lis = list()
+for i in range(0,n+1):
+    if i % 5 == 0 and i % 7 == 0 :
+        lis.append(str(i))
+print(",".join(lis))
+```
+> 65.Please write assert statements to verify that every number in the list [2,4,6,8] is even.
+```python
+lis = [2,4,5,6]
+for i in lis:
+    assert i%2 == 0
+```
+> 66.Please write a program which accepts basic mathematic expression from console and print the evaluation result.
+
+> Example: If the following n is given as input to the program:
+```
+35 + 3
+```
+> Then, the output of the program should be:
+```
+38
+```
+```python
+x = input("请输入：")
+print(eval(x))
+#eval() 函数用来执行一个字符串表达式，并返回表达式的值。
+```
+> 67.Please write a binary search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
+```python
+def search(lis,item):
+    if item not in lis:
+        return None
+    if item in lis:
+        return lis.index(item)
+lis = [1,2,3,4,5]
+print(search(lis,3))
+```
+> 68.Please generate a random float where the value is between 10 and 100 using Python module.
+```python
+import random
+print(random.random()*100)
+```
+> 69.Please generate a random float where the value is between 5 and 95 using Python module.
+```python
+import random
+print(random.uniform(5, 95))
+```
+> 70.Please write a program to output a random even number between 0 and 10 inclusive using random module and list comprehension.
+```python
+import random
+lis = list()
+for i in range(0,11):
+    if i % 2 == 0:
+        lis.append(i)
+print(random.choice(lis))
+#random.choice从序列中获取一个随机元素
+```
+
+> 71.Please write a program to output a random number, which is divisible by 5 and 7, between 10 and 150 inclusive using random module and list comprehension.
+```python
+import random
+lis = list()
+for i in range(0,151):
+    if i % 5 == 0 and i % 7 == 0 :
+        lis.append(str(i))
+print(random.choice(lis))
+```
+> 72.Please write a program to generate a list with 5 random numbers between 100 and 200 inclusive.
+```python
+import random
+print(random.sample(range(100,201),5))
+```
+> 73.Please write a program to randomly generate a list with 5 even numbers between 100 and 200 inclusive.
+```python
+import random
+print(random.sample(range(100,201,2),5))
+#range(start, stop, step)
+```
+> 74.Please write a program to randomly generate a list with 5 numbers, which are divisible by 5 and 7 , between 1 and 1000 inclusive.
+```python
+import random
+lis = list()
+for i in range(1,1002):
+    if i % 5 == 0 and i % 7 == 0 :
+        lis.append(str(i))
+print(random.sample(lis,5))
+```
+> 75.Please write a program to randomly print a integer number between 7 and 15 inclusive.
+```python
+import random
+print(random.randint(7,16))
+#随机整数
+```
+> 76.Please write a program to compress and decompress the string "hello world!hello world!hello world!hello world!".
+```python
+import zlib
+X = "hello world!hello world!hello world!hello world!"
+Y = bytes(X, 'utf-8')
+#TypeError: a bytes-like object is required, not 'str'
+x = zlib.compress(Y)
+print(x)
+print(zlib.decompress(x))
+```
+> 77.Please write a program to print the running time of execution of "1+1" for 100 times.
+```python
+import time
+before = time.time()
+for i in range(100):
+    x = 1 + 1
+after = time.time()
+execution_time = after - before
+print(execution_time)
+```
+> 78.Please write a program to shuffle and print the list [3,6,7,8].
+```python
+import random
+lis = [1,2,3,4,5,6,7,8,9]
+random.shuffle(lis)
+print(lis)
+#print(random.shuffle(lis))会返回None值
+```
+> 79.Please write a program to generate all sentences where subject is in ["I", "You"] and verb is in ["Play", "Love"] and the object is in ["Hockey","Football"].
+```python
+subjects = ["I", "You"]
+verbs = ["Play", "Love"]
+objects = ["Hockey","Football"]
+for sub in subjects:
+    for verb in verbs:
+        for ob in objects:
+            item = sub +" "+ verb +" "+ ob
+            print(sub +" "+ verb +" "+ ob)
+```
