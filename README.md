@@ -1162,3 +1162,97 @@ for sub in subjects:
             item = sub +" "+ verb +" "+ ob
             print(sub +" "+ verb +" "+ ob)
 ```
+> 80.Please write a program to print the list after removing even numbers in [5,6,77,45,22,12,24].
+```python
+lis = [5,6,77,45,22,12,24]
+lis_new = list()
+for i in lis:
+    if i%2 != 0:
+        lis_new.append(i)
+print(lis_new)
+#for循环按照索引值读取
+```
+
+> 81.By using list comprehension, please write a program to print the list after removing numbers which are divisible by 5 and 7 in [12,24,35,70,88,120,155].
+```python
+lis = [12,24,35,70,88,120,155]
+lis_new = list()
+for i in lis:
+    if i%5 != 0 and i%7 != 0:
+        lis_new.append(i)
+print(lis_new)
+#for循环按照索引值读取
+```
+> 82.By using list comprehension, please write a program to print the list after removing the 0th, 2nd, 4th,6th numbers in [12,24,35,70,88,120,155].
+```python
+lis = [12,24,35,70,88,120,155]
+lis_new = list()
+for i in range(len(lis)):
+    if i != 0 and i !=2 and i !=4 and i !=6:
+        lis_new.append(lis[i])
+print(lis_new)
+```
+> 83.By using list comprehension, please write a program to print the list after removing the 2nd - 4th numbers in [12,24,35,70,88,120,155].
+```python
+lis = [12,24,35,70,88,120,155]
+lis_new = list()
+for i in range(len(lis)):
+    if i < 2 or i > 4:
+        lis_new.append(lis[i])
+print(lis_new)
+```
+>84.By using list comprehension, please write a program generate a 3*5*8 3D array whose each element is 0.
+```python
+array = [[ [0 for col in range(8)] for col in range(5)] for row in range(3)]
+print(array)
+```
+> 85.By using list comprehension, please write a program to print the list after removing the 0th,4th,5th numbers in [12,24,35,70,88,120,155].
+```python
+lis = [12,24,35,70,88,120,155]
+lis_new = list()
+for i in range(len(lis)):
+    if i != 0 and i !=4 and i !=5:
+        lis_new.append(lis[i])
+print(lis_new)
+```
+> 86.By using list comprehension, please write a program to print the list after removing the value 24 in [12,24,35,24,88,120,155].
+```python
+lis = [12,24,35,70,88,120,155]
+lis.remove(24)
+print(lis)
+```
+> 87.With two given lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], write a program to make a list whose elements are intersection of the above given lists.
+```python
+is_1 = [1,3,6,78,35,55]
+lis_2 = [12,24,35,24,88,120,155]
+print(set.intersection(set(lis_1),set(lis_2)))
+#intersection() 方法用于返回两个或更多集合中都包含的元素，即交集。
+```
+> 88.With a given list [12,24,35,24,88,120,155,88,120,155], write a program to print this list after removing all duplicate values with original order reserved.
+```python
+l1 = [12,24,35,24,88,120,155,88,120,155]
+l2 = list(set(l1))
+l2.sort(key=l1.index)
+print(l2)
+#set() 函数创建一个无序不重复元素集，可进行关系测试，删除重复数据，还可以计算交集、差集、并集等。
+```
+> 89.Define a class Person and its two child classes: Male and Female. All classes have a method "getGender" which can print "Male" for Male class and "Female" for Female class.
+```python
+class Person:
+    def gender(self):
+        return "ALL"
+
+
+class Male(Person):
+    def gender(self):
+        return "Male"
+
+class Female(Person):
+    def gender(self):
+        return "Female"
+
+male = Male()
+female = Female()
+print(male.gender())
+print(female.gender())
+```
