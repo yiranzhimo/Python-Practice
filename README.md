@@ -1256,3 +1256,253 @@ female = Female()
 print(male.gender())
 print(female.gender())
 ```
+> 90.Please write a program which count and print the numbers of each character in a string input by console.
+
+> Example: If the following string is given as input to the program:
+```
+abcdefgabc
+```
+>Then, the output of the program should be:
+```
+a,2
+c,2
+b,2
+e,1
+d,1
+g,1
+f,1
+```
+```python
+words = list(input("请输入字符："))
+lis_new = list()
+for i in words:
+    if i not in lis_new:
+        lis_new.append(i)
+for i in lis_new:
+    num_i = words.count(i)
+    print(i,num_i)
+```
+> 91.Please write a program which accepts a string from console and print it in reverse order.
+> Example: If the following string is given as input to the program:*
+```
+rise to vote sir
+```
+> Then, the output of the program should be:
+```
+ris etov ot esir
+```
+```python
+words = list(input("请输入字符串："))
+words.reverse()
+print("".join(words))
+```
+> 92.Please write a program which accepts a string from console and print the characters that have even indexes.
+> Example: If the following string is given as input to the program:
+```
+H1e2l3l4o5w6o7r8l9d
+```
+> Then, the output of the program should be:
+```
+Helloworld
+```
+```python
+from string import digits
+words = "H1e2l3l4o5w6o7r8l9d"
+res = words.translate(str.maketrans('', '', digits))
+print(res)
+```
+> 93.Please write a program which prints all permutations of [1,2,3]
+```python
+import itertools
+print(list(itertools.permutations([1,2,3])))
+```
+> 94.Write a program to solve a classic ancient Chinese puzzle: We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?
+```python
+def solve(num_heads,num_legs):
+    for i in range(num_heads+1):
+        j = num_heads - i
+        if 2*i + 4*j == num_legs:
+            return i,j
+num_heads = 35
+num_legs = 94
+print(solve(num_heads,num_legs))
+```
+> 95.Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given scores. Store them in a list and find the score of the runner-up.
+> If the following string is given as input to the program:
+```
+5
+2 3 6 6 5
+```
+> Then, the output of the program should be:
+```
+5
+```
+```python
+nums = list(input("请输入数字："))
+nums_new = list(set(nums))
+nums_new.sort(reverse = True)
+print(nums_new[1])
+```
+> 96.You are given a string S and width W. Your task is to wrap the string into a paragraph of width.
+> If the following string is given as input to the program:
+```
+ABCDEFGHIJKLIMNOQRSTUVWXYZ
+4
+```
+> Then, the output of the program should be:
+```
+ABCD
+EFGH
+IJKL
+IMNO
+QRST
+UVWX
+YZ
+```
+```python
+import textwrap
+words = input("请输入字符串：")
+nums = input("请输入数字：")
+print(textwrap.fill(words,int(nums)))
+```
+> 97.You are given an integer, N. Your task is to print an alphabet rangoli of size N. (Rangoli is a form of Indian folk art based on creation of patterns.)
+> Different sizes of alphabet rangoli are shown below:
+```
+#size 3
+
+----c----
+--c-b-c--
+c-b-a-b-c
+--c-b-c--
+----c----
+
+#size 5
+
+--------e--------
+------e-d-e------
+----e-d-c-d-e----
+--e-d-c-b-c-d-e--
+e-d-c-b-a-b-c-d-e
+--e-d-c-b-c-d-e--
+----e-d-c-d-e----
+------e-d-e------
+--------e--------
+```
+**不会做，遂弃**
+> 98.You are given a date. Your task is to find what the day is on that date.
+> Input
+> A single line of input containing the space separated month, day and year, respectively, in MM DD YYYY format.
+```
+08 05 2015
+```
+> Output
+> Output the correct day in capital letters.
+```
+WEDNESDAY
+```
+> 99.Given 2 sets of integers, M and N, print their symmetric difference in ascending order. The term symmetric difference indicates those values that exist in either M or N but do not exist in both.
+> Input
+> The first line of input contains an integer, M.The second line contains M space-separated integers.The third line contains an integer, N.The fourth line contains N space-separated integers.
+```
+4
+2 4 5 9
+4
+2 4 11 12
+```
+> Output
+> Output the symmetric difference integers in ascending order, one per line.
+```
+5
+9
+11
+12
+```
+```python
+lis_1 = [2,4,5,9]
+lis_2 = [2,4,11,12]
+lis_1_new = list()
+lis_2_new = list()
+for i in lis_1:
+    if i not in lis_2:
+        lis_1_new.append(i)
+for i in lis_2:
+    if i not in lis_1:
+        lis_2_new.append(i)
+print(str(lis_1_new))
+print(str(lis_2_new))
+```
+> 100.You are given words. Some words may repeat. For each word, output its number of occurrences. The output order should correspond with the input order of appearance of the word. See the sample input/output for clarification.
+> If the following string is given as input to the program:
+```
+4
+bcdef
+abcdefg
+bcde
+bcdef
+```
+> Then, the output of the program should be:
+```
+3
+2 1 1
+```
+**不明白意思，遂弃**
+> 101.You are given a string.Your task is to count the frequency of letters of the string and print the letters in descending order of frequency.
+> If the following string is given as input to the program:
+```
+aabbbccde
+```
+> Then, the output of the program should be:
+```
+b 3
+a 2
+c 2
+d 1
+e 1
+```
+```python
+words = list(input("请输入字符："))
+lis_new = list()
+for i in words:
+    if i not in lis_new:
+        lis_new.append(i)
+for i in lis_new:
+    num_i = words.count(i)
+    print(i,num_i)
+```
+> 102.Write a Python program that accepts a string and calculate the number of digits and letters.
+> Input
+```
+Hello321Bye360
+```
+> Output
+```
+Digit - 6
+Letter - 8
+```
+```python
+s = input()
+num, char = 0, 0 
+for i in s:
+    if i.isdigit():
+        num = num + 1  
+    elif i.isalpha():    
+        char = char + 1
+print("Digit - ",num)
+print("Letter - ",char)
+```
+> 103.Given a number N.Find Sum of 1 to N Using Recursion
+> Input
+```
+5
+```
+> Output
+```
+15
+```
+```python
+nums = int(input("请输入数字"))
+sum = 0
+for i in range(nums+1):
+    sum = sum + i
+print(sum)
+```
